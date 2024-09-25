@@ -1,3 +1,8 @@
+<?php
+    /*Incluir función para cáculo de factorial*/
+    require_once("01Functions.php");
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -15,13 +20,10 @@
             </tr>
         </thead>
         <tbody>
-                <?php 
-                    /*Incluir función para cáculo de factorial*/
-                    require_once("01Functions.php");
-    
+                <?php     
                     /*Guardar en array los factoriales [0-10]*/
                     for($i=0;$i<=10;$i++)
-                        $factoriales[$i]=factorial($i)
+                        $factoriales[$i]=factorial($i);
 
                     /*Mostrar factoriales en formato tabla*/
                     for($i=0;$i<count($factoriales);$i++)
