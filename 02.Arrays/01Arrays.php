@@ -8,7 +8,6 @@
     -Calcular
     -Mostrar
 -->
-
 <?php
     /*Asignar números a calcular
     for($i=0;$i<=10;$i++)
@@ -28,6 +27,7 @@
     //print_r($factoriales);
         
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
