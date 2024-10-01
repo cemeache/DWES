@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulario PHP</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body>
+
+        <form action="./recoger.php" method="GET">
+            <label for="text">Nombre:</label>
+            <input type="text" id="text" name="nombre"><br><br>
+
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password"><br><br>
+
+
+
+            <label for="checkbox1">Repite:</label>
+            <input type="checkbox" id="checkbox1" name="repite" value="si"><br><br>
+
+
+            <label>Deportes:</label>
+            <input type="checkbox" name="deportes" value="futbol">Fútbol
+            <input type="checkbox" name="deportes" value="ciclismo">Ciclismo
+            <input type="checkbox" name="deportes" value="padel">Padel
+            <input type="checkbox" name="deportes" value="voleibol">Voleibol<br><br>
+
+
+            <label for="radio1">Primero:</label>
+            <input type="radio" id="radio1" name="curso" value="primero"><br>
+            <label for="radio2">Segundo:</label>
+            <input type="radio" id="radio2" name="curso" value="segundo"><br><br>
+
+
+            <label for="textarea">Observaciones:</label><br>
+            <textarea id="textarea" name="observaciones" rows="4" cols="50"></textarea><br><br>
+
+
+            <label for="select">Ciclo Formativo:</label>
+            <select id="select" name="ciclo">
+                <option value="asir">ASIR</option>
+                <option value="dam">DAM</option>
+                <option value="daw">DAW</option>
+            </select><br><br>
+
+
+            <input type="reset" value="Borrar">
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>
