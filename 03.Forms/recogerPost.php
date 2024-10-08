@@ -1,20 +1,20 @@
 <?php
 
-    $nombre = $_GET["nombre"];
+    $nombre = $_POST["nombre"];
 
-    $password = $_GET["password"];
+    $password = $_POST["password"];
     
-    if(isset($_GET["deportes"])) {   
-        for($i = 0; $i < count($_GET["deportes"]); $i++)
-            $deportes[] = $_GET["deportes"][$i];
+    if(isset($_POST["deportes"])) {   
+        for($i = 0; $i < count($_POST["deportes"]); $i++)
+            $deportes[] = $_POST["deportes"][$i];
     }   
 
-    if(isset($_GET["curso"]))
-        $curso = $_GET["curso"];
+    if(isset($_POST["curso"]))
+        $curso = $_POST["curso"];
     
-    $observaciones = $_GET["observaciones"];
+    $observaciones = $_POST["observaciones"];
     
-    $ciclo = $_GET["ciclo"];
+    $ciclo = $_POST["ciclo"];
 
 ?>
 

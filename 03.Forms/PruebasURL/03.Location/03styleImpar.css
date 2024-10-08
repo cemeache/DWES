@@ -1,0 +1,22 @@
+table{
+    border-collapse: collapse;
+    width: 70%;
+    margin: 0 auto;
+    text-transform: capitalize;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.6rem;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+th{
+    background-color: #ddcb00;
+}
+
+td{
+    background-color: #ddcb0090;
+}

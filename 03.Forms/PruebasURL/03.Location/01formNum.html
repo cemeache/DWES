@@ -1,0 +1,28 @@
+<!-- La web va a pedir un número por teclado y como resultado me va a indicar si el 
+ número es par o impar. Lo que va mostrar es:
+    Número introducido  Cuadrado del número  Texto indicando si es par o impar.
+
+Para realizar el proceso:
+- Página que envía el formulario.
+- Página que averigua si el número es par o impar y obtiene también su cuadrado. 
+    Vas a usar una función que averigua si el número es par y devuelve true o false. 
+        Esta función también calcula el cuadrado del número, que habrá que usar posteriormente.
+- Si número es par redirige a una página par.php, que muestra el número y su cuadrado con 
+    estilo propio (css)
+- Si número es impar redirige a una página par.php, que muestra el número y su cuadrado con 
+    estilo propio (css) -->
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>¿Par o Impar?</title>
+    </head>
+    <body>
+        <form method="GET" action="./02parImpar.php">
+            <label>Número: </label>
+            <input type="number" name="number">
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>
