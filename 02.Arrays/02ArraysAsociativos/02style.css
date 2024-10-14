@@ -1,0 +1,16 @@
+figure {
+    display: inline-block;
+    width: 30%;
+    margin: 0 1.5%;
+    vertical-align: top;
+}
+
+img {
+    width: 30vw;
+}
+
+figcaption {
+    text-transform: capitalize;
+    text-align: center;
+    width: 100%;
+}
