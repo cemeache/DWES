@@ -3,7 +3,6 @@
     "clavel"=>"clavel.jpg",
     "petunia"=>"petunia.jpg");
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
