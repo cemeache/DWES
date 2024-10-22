@@ -11,5 +11,6 @@ CREATE TABLE IF NOT EXISTS alumnos (
     apellidos VARCHAR(100) NOT NULL,
     email VARCHAR(255) NOT NULL,
     telefono CHAR(9) NOT NULL,
-    CONSTRAINT pk_alumnos PRIMARY KEY (idAlum)
+    CONSTRAINT pk_alumnos PRIMARY KEY (idAlum),
+    CONSTRAINT uc_email UNIQUE (email)
 ); /*ENGINE=InnoDB DEFAULT CHARSET=utf8 || Explicación mañana en clase*/
