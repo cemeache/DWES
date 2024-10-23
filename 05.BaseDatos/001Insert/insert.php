@@ -5,7 +5,11 @@
 
     /*echo $consulta;*/
 
-    $resultado = $mysqli->query($consulta);
+    if ($mysqli->query($consulta)) {
+        echo "Registro realizado correctamente";
+    } else {
+        echo "Error al registrar: " . $mysqli->error;
+    }
 
     $mysqli->close();
 ?>
