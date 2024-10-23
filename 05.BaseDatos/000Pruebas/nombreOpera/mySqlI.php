@@ -12,6 +12,8 @@
 	$fila = $resultado ->fetch_assoc(); 
     
     print_r($fila);
+    echo "<hr>";
+    var_dump($fila);
     
 
     /*Cerrar la conexión establecida*/
