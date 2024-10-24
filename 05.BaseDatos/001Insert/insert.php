@@ -9,7 +9,7 @@
         if($mysqli->query($consulta))
             echo "Registro realizado correctamente";
         else
-            throw new Exception("Error al registrar: " . $msqli->error);
+            throw new Exception("Error al registrar: " . $mysqli->error);
         
         $mysqli->close();
 
