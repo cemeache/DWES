@@ -16,4 +16,4 @@
                 echo "<figure><img src='./02Img/".$enlace."'><figcaption>".$nombre."</figcaption></figure>";
         ?>
     </body>
-</html>
+</html>  

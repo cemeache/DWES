@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="./01recibe.php">
+        <input type="text" name="text"><br><br>
+        <select name="asig">
+            <option selected disabled></option>
+            <option value="DWEC">DWEC</option>
+            <option value="DWES">DWES</option>
+            <option value="DEAP">DEAP</option>
+            <option value="DIW">DIW</option>
+        </select><br><br>
+        <input type="checkbox" name="alumnos[]" value="Maria">Maria<br>
+        <input type="checkbox" name="alumnos[]" value="Celia">Celia<br>
+        <input type="checkbox" name="alumnos[]" value="Adriana">Adriana<br><br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
