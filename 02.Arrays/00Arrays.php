@@ -24,7 +24,7 @@
             "telefono "=>"644123456"
         );
 
-    /*---RECORRER ARRAY---*/
+    /*---RECORRER ARRAY ASOCIATIVO---*/
         
         print_r($datos); //Muestra todo el contenido a la vez  
             echo "<br>"
@@ -34,13 +34,5 @@
         
         foreach($datos as $valor) //Abreviado para mostrar solo el valor
             echo $valor;
-            
-?>
-        
-            
-    
 
-
-            
-            
 ?>
