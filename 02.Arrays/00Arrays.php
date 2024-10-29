@@ -1,7 +1,8 @@
 <?php
-    /*CREACIÓN DE ARRAYS*/
+    /*---CREACIÓN DE ARRAYS---*/
 
-        //Función array()
+    /*ARRAYS INDEXADOS | [ÍNDICES NUMÉRICOS]*/
+        
         $colores = array(
             0=>"azul",
             1=>"naranja",
@@ -10,7 +11,6 @@
 
         $colores = array ("azul", "naranja", "verde");
 
-        //Dinámicamente
         $colores[3] = "rojo";
         $colores[] = "negro"; 	// Se añade en la siguiente posición del array
     
@@ -19,10 +19,12 @@
         $datos["nombre"] = "María Fernández";
         $datos ["telefono"] ="644123456";
 
-        $datos = array("nombre"=>" María Fernández ",
-            "telefono "=>"644123456");
+        $datos = array(
+            "nombre"=>" María Fernández ",
+            "telefono "=>"644123456"
+        );
 
-    /*RECORRER ARRAY*/
+    /*---RECORRER ARRAY---*/
         
         print_r($datos); //Muestra todo el contenido a la vez  
             echo "<br>"
@@ -32,6 +34,8 @@
         
         foreach($datos as $valor) //Abreviado para mostrar solo el valor
             echo $valor;
+            
+?>
         
             
     
