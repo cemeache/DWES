@@ -34,8 +34,8 @@
     </head>
     <body>
         <h1>Selecciona el alumno a editar</h1>
-        <form action="./update.php" method="POST">
-           <select name="alumnos">
+        <form action="./form.php" method="POST">
+           <select name="alumnoEdit">
                 <option selected disabled></option>
                 <?php
                     for($i=0;$i<count($idAlumno);$i++)
