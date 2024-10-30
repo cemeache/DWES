@@ -27,7 +27,7 @@
     /*---RECORRER ARRAY ASOCIATIVO---*/
         
         print_r($datos); //Muestra todo el contenido a la vez  
-            echo "<br>"
+            echo "<br>";
 
         foreach ($datos as $indice => $valor) //Recorriendo el array con un foreach
             echo "<b>".$indice ."</b> tiene el valor ". $valor;
