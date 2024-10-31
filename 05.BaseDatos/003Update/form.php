@@ -26,6 +26,9 @@
     <body>
         <h1>Identifica al alumno que deseas borrar</h1>
         <form action="./update.php" method="POST">
+            <?php
+                echo '<input type="text" hidden name="idAlum" value="'.$alumUpdate.'"';
+            ?>
             <label for="text">Nombre:</label>
             <?php
                 echo '<input type="text" name="nombre" value="'.$nombre[0].'"><br><br>'
