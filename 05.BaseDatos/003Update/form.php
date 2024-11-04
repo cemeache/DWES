@@ -45,7 +45,7 @@
             <?php
                 echo '<input type="text" name="telefono" value="'.$telefono[0].'"><br><br>';
             ?>
-            <input type="reset" value="Borrar">
+            <input type="reset" value="Valores Anteriores">
             <input type="submit" value="Enviar">
         </form>
     </body>

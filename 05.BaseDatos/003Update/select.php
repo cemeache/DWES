@@ -43,7 +43,7 @@
                 ?>
            </select>
            <input type="reset" value="Borrar">
-           <input type="submit" value="Enviar">
+           <input type="submit" value="Editar">
         </form>
     </body>
 </html>
