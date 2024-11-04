@@ -23,3 +23,22 @@ INSERT INTO alumnos (nombre, apellidos, email, telefono) VALUES ('Miguel', 'Sant
 INSERT INTO alumnos (nombre, apellidos, email, telefono) VALUES ('Pedro', 'Cano Barroso', 'pedrocano@gmail.com', '404044444');
 INSERT INTO alumnos (nombre, apellidos, email, telefono) VALUES ('Marta', 'Pérez García', 'martaperez@gmail.com', '222220222');
 INSERT INTO alumnos (nombre, apellidos, email, telefono) VALUES ('Lucía', 'Castro Uriol', 'luciacastro@gmail.com', '505055555');
+
+/*INSERT cursos*/
+INSERT INTO cursos (idAlum, nombreCurso, fechaInicio, fechaFin) VALUES
+(1, 'Matemáticas', '2023-01-10', '2023-06-10'),
+(2, 'Física', '2023-02-15', '2023-07-15'),
+(3, 'Química', '2023-03-20', '2023-08-20'),
+(1, 'Biología', '2023-04-25', '2023-09-25');
+
+-- Insertar datos en la nueva tabla
+INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Carlos', 'Perez Lopez', 'carlos@gmail.com', 'Matemáticas');
+INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Ana', 'Martinez Ruiz', 'ana@gmail.com', 'Lengua');
+INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Luis', 'Garcia Fernandez', 'luis@gmail.com', 'Historia');
+INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Marta', 'Sanchez Gomez', 'marta@gmail.com', 'Ciencias');
+INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Jose', 'Lopez Diaz', 'jose@gmail.com', 'Educación Física');
+INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Laura', 'Hernandez Perez', 'laura@gmail.com', 'Inglés');
+INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('David', 'Gonzalez Rodriguez', 'david@gmail.com', 'Física');
+INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Sara', 'Ramirez Sanchez', 'sara@gmail.com', 'Química');
+INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Juan', 'Torres Martinez', 'juan@gmail.com', 'Geografía');
+INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Elena', 'Vazquez Lopez', 'elena@gmail.com', 'Biología');

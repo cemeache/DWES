@@ -14,3 +14,22 @@ CREATE TABLE IF NOT EXISTS alumnos (
     CONSTRAINT pk_alumnos PRIMARY KEY (idAlum),
     CONSTRAINT uc_email UNIQUE (email)
 ); /*ENGINE=InnoDB DEFAULT CHARSET=utf8 || Explicación mañana en clase*/
+
+CREATE TABLE cursos (
+    idCurso INT NOT NULL AUTO_INCREMENT,
+    idAlum INT NOT NULL,
+    nombreCurso VARCHAR(100) NOT NULL,
+    fechaInicio DATE NOT NULL,
+    fechaFin DATE NOT NULL,
+    PRIMARY KEY (idCurso),
+    FOREIGN KEY (idAlum) REFERENCES alumnos(idAlum)
+);
+
+CREATE TABLE profesores (
+    idProfesores int NOT NULL AUTO_INCREMENT, /* MySQL auto_increment */
+    nombre varchar(50) NOT NULL,
+    apellidos varchar(50) NOT NULL,
+    email varchar(150) UNIQUE NOT NULL,
+    asignatura varchar(100) NOT NULL,
+    CONSTRAINT pk_idProfesores PRIMARY KEY (idProfesores)
+);
