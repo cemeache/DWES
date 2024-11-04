@@ -33,3 +33,11 @@ CREATE TABLE profesores (
     asignatura varchar(100) NOT NULL,
     CONSTRAINT pk_idProfesores PRIMARY KEY (idProfesores)
 );
+
+CREATE TABLE IF NOT EXISTS curso_profesor (
+    idCurso INT NOT NULL,
+    idProfesores INT NOT NULL,
+    PRIMARY KEY (idCurso, idProfesores),
+    FOREIGN KEY (idCurso) REFERENCES cursos(idCurso),
+    FOREIGN KEY (idProfesores) REFERENCES profesores(idProfesores)
+);

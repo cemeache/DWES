@@ -42,3 +42,14 @@ INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('David', '
 INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Sara', 'Ramirez Sanchez', 'sara@gmail.com', 'Química');
 INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Juan', 'Torres Martinez', 'juan@gmail.com', 'Geografía');
 INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Elena', 'Vazquez Lopez', 'elena@gmail.com', 'Biología');
+
+-- Insertar datos en la tabla intermedia curso_profesor
+INSERT INTO curso_profesor (idCurso, idProfesores) VALUES (1, 1);
+INSERT INTO curso_profesor (idCurso, idProfesores) VALUES (2, 7);
+INSERT INTO curso_profesor (idCurso, idProfesores) VALUES (3, 8);
+INSERT INTO curso_profesor (idCurso, idProfesores) VALUES (4, 4);
+INSERT INTO curso_profesor (idCurso, idProfesores) VALUES (1, 5);
+INSERT INTO curso_profesor (idCurso, idProfesores) VALUES (2, 6);
+INSERT INTO curso_profesor (idCurso, idProfesores) VALUES (3, 2);
+INSERT INTO curso_profesor (idCurso, idProfesores) VALUES (4, 3);
+INSERT INTO curso_profesor (idCurso, idProfesores) VALUES (1, 9);

@@ -112,3 +112,10 @@ FROM alumnos;
 SELECT AVG(idAlum)
 FROM alumnos
 WHERE idALum>10;
+
+/*INNER JOIN --> Devuelve los registros que tienen valores coincidentes 
+    en ambas tablas*/
+SELECT tabla1.columna1, tabla2.columna2
+FROM tabla1
+INNER JOIN tabla2
+ON tabla1.columna_comun = tabla2.columna_comun;
