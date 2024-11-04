@@ -115,7 +115,54 @@ WHERE idALum>10;
 
 /*INNER JOIN --> Devuelve los registros que tienen valores coincidentes 
     en ambas tablas*/
-SELECT tabla1.columna1, tabla2.columna2
-FROM tabla1
-INNER JOIN tabla2
-ON tabla1.columna_comun = tabla2.columna_comun;
+SELECT *
+FROM profesores
+INNER JOIN curso_profesor ON profesores.idProfesores = curso_profesor.idProfesores;
+
+SELECT *
+FROM profesores
+INNER JOIN curso_profesor 
+	ON profesores.idProfesores = curso_profesor.idProfesores
+INNER JOIN cursos
+	ON cursos.idCurso = curso_profesor.idCurso;
+
+SELECT profesores.nombre, cursos.nombreCurso
+FROM profesores
+INNER JOIN curso_profesor ON profesores.idProfesores = curso_profesor.idProfesores
+INNER JOIN cursos ON curso_profesor.idCurso = cursos.idCurso;
+
+SELECT nombre,asignatura,nombreCurso
+FROM profesores
+INNER JOIN curso_profesor ON profesores.idProfesores = curso_profesor.idProfesores
+INNER JOIN cursos ON cursos.idCurso = curso_profesor.idCurso;
+
+/* Enunciados para practicar con INNER JOIN */
+
+/* 1. Obtener el nombre y apellidos de los alumnos junto con el nombre del curso en el que están inscritos. */
+SELECT nombre,apellidos,nombreCurso
+FROM alumnos
+INNER JOIN cursos ON alumnos.idAlum = cursos.idAlum;
+
+/* 2. Listar los nombres de los cursos y los nombres de los profesores que los imparten. */
+SELECT nombreCurso,nombre
+FROM cursos
+INNER JOIN curso_profesor ON cursos.idCurso = curso_profesor.idCurso
+INNER JOIN profesores ON profesores.idProfesores = curso_profesor.idProfesores;
+
+/* 3. Mostrar el nombre del curso, la fecha de inicio y la fecha de fin junto con el nombre y apellidos del alumno que lo está tomando. */
+SELECT nombreCurso, fechaInicio, fechaFin,nombre,apellidos
+FROM cursos
+INNER JOIN alumnos ON cursos.idAlum = alumnos.idAlum;
+
+/* 4. Obtener el nombre y apellidos de los profesores junto con el nombre de la asignatura que imparten y el nombre del curso asociado. */
+SELECT nombre, apellidos, asignatura, nombreCurso
+FROM profesores
+INNER JOIN curso_profesor ON profesores.idProfesores = curso_profesor.idProfesores
+INNER JOIN cursos ON curso_profesor.idCurso = cursos.idCurso;
+
+/* 5. Listar todos los cursos junto con los nombres de los alumnos y los profesores asociados a cada curso. */
+SELECT nombreCurso, alumnos.nombre, profesores.nombre
+FROM cursos
+INNER JOIN curso_profesor ON cursos.idCurso = curso_profesor.idCurso
+INNER JOIN profesores ON profesores.idProfesores = curso_profesor.idProfesores
+INNER JOIN alumnos ON alumnos.idAlum = cursos.idAlum;

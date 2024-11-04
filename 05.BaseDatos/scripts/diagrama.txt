@@ -1,0 +1,30 @@
++-------------+      +---------------+
+|  alumnos    |      |  cursos       |
++-------------+      +---------------+
+| idAlum (PK) |<-----| idCurso (PK)  |
+| nombre      |      | idAlum (FK)   |
+| apellidos   |      | nombreCurso   |
+| email       |      | fechaInicio   |
+| telefono    |      | fechaFin      |
++-------------+      +---------------+
+                        |
+                        |
+                        v
+                +-------------------+
+                |  curso_profesor   |
+                +-------------------+
+                | idCurso (FK)      |
+                | idProfesores (FK) |
+                +-------------------+
+                        |
+                        |
+                        v
+                +-------------------+
+                | profesores        |
+                +-------------------+
+                | idProfesores (PK) |
+                | nombre            |
+                | apellidos         |
+                | email             |
+                | asignatura        |
+                +-------------------+
