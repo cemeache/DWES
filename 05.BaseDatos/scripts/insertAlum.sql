@@ -26,10 +26,10 @@ INSERT INTO alumnos (nombre, apellidos, email, telefono) VALUES ('Lucía', 'Cast
 
 /*INSERT cursos*/
 INSERT INTO cursos (idAlum, nombreCurso, fechaInicio, fechaFin) VALUES
-(1, 'Matemáticas', '2023-01-10', '2023-06-10'),
-(2, 'Física', '2023-02-15', '2023-07-15'),
-(3, 'Química', '2023-03-20', '2023-08-20'),
-(1, 'Biología', '2023-04-25', '2023-09-25');
+(1, '1DAW', '2023-01-10', '2023-06-10'),
+(2, '2DAW', '2023-02-15', '2023-07-15'),
+(3, '1SMR', '2023-03-20', '2023-08-20'),
+(1, '2SMR', '2023-04-25', '2023-09-25');
 
 -- Insertar datos en la nueva tabla
 INSERT INTO profesores (nombre, apellidos, email, asignatura) VALUES ('Carlos', 'Perez Lopez', 'carlos@gmail.com', 'Matemáticas');

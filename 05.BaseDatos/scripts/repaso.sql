@@ -166,3 +166,4 @@ FROM cursos
 INNER JOIN curso_profesor ON cursos.idCurso = curso_profesor.idCurso
 INNER JOIN profesores ON profesores.idProfesores = curso_profesor.idProfesores
 INNER JOIN alumnos ON alumnos.idAlum = cursos.idAlum;
+
