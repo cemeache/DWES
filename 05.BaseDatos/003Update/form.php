@@ -48,5 +48,10 @@
             <input type="reset" value="Valores Anteriores">
             <input type="submit" value="Enviar">
         </form>
+        <?php
+            if (isset($mnsj)) {
+                echo "<p>$mnsj</p>";
+            }
+        ?>
     </body>
 </html>

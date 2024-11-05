@@ -8,9 +8,16 @@
 	$telefono=$_POST["telefono"];
 
     $consulta = "UPDATE alumnos SET telefono='".$telefono."', email='".$email."', nombre='".$nombre."', apellidos='".$apellidos."' WHERE idAlum='".$idAlum."'";
-    if($mysqli->query($consulta))
-        echo "<p>La actualización de datos se realizó correctamente</p>";
-    else
-        echo "<p>ERROR | Ha ocurrido un error, no se pudo completar la actualización de datos</p>";
+    try {
+        if($mysqli->query($consulta))
+            $mnsj = "La actualización de datos se realizó correctamente";
+        else
+            throw new Exception("ERROR | Ha ocurrido un error, no se pudo completar la actualización de datos.");
+    } catch (Exception $e){
+        $mnsj = $e->getMessage();
+    }
+        
+    
+    require_once("./form.php");
 
 ?>
