@@ -12,7 +12,10 @@
         if($mysqli->query($consulta))
             $mnsj = "La actualización de datos se realizó correctamente";
         else
-            throw new Exception("ERROR | Ha ocurrido un error, no se pudo completar la actualización de datos.");
+            if ($mysqli->errno == 1062)
+                throw new Exception("ERROR | El correo electrónico '$email' ya está registrado.");
+            else
+                throw new Exception("ERROR | Ha ocurrido un error, no se pudo completar la actualización de datos: " . $mysqli->error);
     } catch (Exception $e){
         $mnsj = $e->getMessage();
     }

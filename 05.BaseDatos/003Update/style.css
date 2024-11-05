@@ -27,7 +27,7 @@ form select {
 }
 
 /* Estilos para el botón de envío y borrado*/
-form input[type="submit"],[type="reset"] {
+form input[type="submit"],[type="reset"],button {
     width: 100%;
     padding: 10px;
     background-color: #007BFF;
@@ -39,6 +39,13 @@ form input[type="submit"],[type="reset"] {
     margin-bottom: 4px;
 }
 
-form input[type="submit"]:hover,[type="reset"]:hover {
+form input[type="submit"]:hover,[type="reset"]:hover,button:hover {
     background-color: #0056b3;
+}
+
+/* Estilos para los mensajes de error */
+div{
+    font-size: 1.2rem;
+    margin: 2%;
+    text-align: center;
 }

@@ -1,19 +1,19 @@
 <?php
-    $alumUpdate = $_POST["alumnoEdit"];
-
     require_once("../conexion.php");
+    
+    if(isset($_POST["alumnoEdit"])){
+        $alumUpdate = $_POST["alumnoEdit"];
+        $consulta = "SELECT nombre,apellidos,email,telefono FROM alumnos WHERE idAlum='".$alumUpdate."'";
 
-    $consulta = "SELECT nombre,apellidos,email,telefono FROM alumnos WHERE idAlum='".$alumUpdate."'";
+        $resultado = $mysqli->query($consulta);
 
-    $resultado = $mysqli->query($consulta);
-
-    for($i=0;$fila=$resultado->fetch_assoc();$i++){
-		$nombre[$i]=$fila["nombre"];
-		$apellidos[$i]=$fila["apellidos"];
-		$email[$i]=$fila["email"];
-		$telefono[$i]=$fila["telefono"];
-	}
-
+        $fila = $resultado->fetch_assoc();
+        $nombre = $fila["nombre"];
+        $apellidos = $fila["apellidos"];
+        $email = $fila["email"];
+        $telefono = $fila["telefono"];
+    }else
+        $alumUpdate = $idAlum;
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,26 +31,27 @@
             ?>
             <label for="text">Nombre:</label>
             <?php
-                echo '<input type="text" name="nombre" value="'.$nombre[0].'"><br><br>'
+                echo '<input type="text" name="nombre" value="'.$nombre.'"><br><br>'
             ?>
             <label for="text">Apellidos:</label>
             <?php
-                echo '<input type="text" name="apellidos" value="'.$apellidos[0].'"><br><br>';
+                echo '<input type="text" name="apellidos" value="'.$apellidos.'"><br><br>';
             ?>
             <label for="text">Email:</label>
             <?php
-                echo '<input type="email" name="email" value="'.$email[0].'"><br><br>';
+                echo '<input type="email" name="email" value="'.$email.'"><br><br>';
             ?>
             <label for="text">Teléfono:</label>
             <?php
-                echo '<input type="text" name="telefono" value="'.$telefono[0].'"><br><br>';
+                echo '<input type="text" name="telefono" value="'.$telefono.'"><br><br>';
             ?>
             <input type="reset" value="Valores Anteriores">
             <input type="submit" value="Enviar">
+            <button type="button" onclick="window.location.href='./select.php'">Volver</button>
         </form>
         <?php
             if (isset($mnsj)) {
-                echo "<p>$mnsj</p>";
+                echo "<div>$mnsj</div>";
             }
         ?>
     </body>
