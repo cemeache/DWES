@@ -5,11 +5,11 @@
     $pswd = $_POST["password"];
 
     $consulta = "SELECT contrasena FROM usuario WHERE idUsuario = '".$idntf."' OR email = '".$idntf."';";
-    echo $consulta;
+    //echo $consulta;
 
     try {
         $resultado = $mysqli->query($consulta);
-        
+
         $fila = $resultado->fetch_assoc();
 
         if(empty($fila["contrasena"]))
