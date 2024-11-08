@@ -4,8 +4,8 @@
     $idntf = $_POST["identf"];
     $pswd = $_POST["password"];
 
-    $consulta = "SELECT contrasena FROM usuario WHERE idUsuario = '".$idntf."' OR email = '".$idntf."';";
-    //echo $consulta;
+    $consulta = "SELECT contrasena FROM usuario WHERE nombre = '".$idntf."' OR email = '".$idntf."';";
+    echo $consulta;
 
     try {
         $resultado = $mysqli->query($consulta);
