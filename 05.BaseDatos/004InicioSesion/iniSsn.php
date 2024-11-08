@@ -5,8 +5,8 @@
     $pswd = $_POST["password"];
 
     $consulta = "SELECT contrasena FROM usuario WHERE nombre = '".$idntf."' OR email = '".$idntf."';";
-    echo $consulta;
-
+    //echo $consulta;
+    //Si existe el usuario -> compruebo que coinciden las contraseñas
     try {
         $resultado = $mysqli->query($consulta);
 
@@ -27,6 +27,5 @@
         $mnsj = $e->getMessage();
         require("./form.php");
     }
-    
     
 ?>
