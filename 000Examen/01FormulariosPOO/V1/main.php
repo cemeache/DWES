@@ -7,10 +7,10 @@
 	
 	/*Si introducen al menos uno de los campos(apellido / nombre) y existe $formato ejecuta los métodos*/
 	if(isset($_POST["apellido"]) && isset($_POST["name"]) && isset($_POST["formato"])){
-		if($formato == "Apellido, Nombre")
-			$cadena = $objFormato->apellidoNombre($apellido,$nombre);
+		if($_POST["formato"] == "Apellido, Nombre")
+			$cadena = $objFormato->apellidoNombre($_POST["apellido"],$_POST["name"]);
 		else
-			$cadena = $objFormato->nombreApellido($apellido,$nombre);
+			$cadena = $objFormato->nombreApellido($_POST["apellido"],$_POST["name"]);
 	
 		echo "<p>Nombre Completo: ".$cadena."</p>";
 		echo "<p>Longitud: ".$objFormato->longitud."</p>";
@@ -19,7 +19,7 @@
 	
 	/*Comprobamos que existe $provincia*/
 	if(isset($_POST["provincia"]))
-		echo "<p>Provincia: ".$provincia."</p>";
+		echo "<p>Provincia: ".$_POST["provincia"]."</p>";
 	else
 		echo "<p>Provincia no seleccionada</p>";
 	
