@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Examen Celia</title>
+    </head>
+    <body>
+        <form action="./main.php" method="POST">
+			<label>Nombre:</label>
+            <input type="text" name="name"><br><br>
+			<label>Apellido:</label>
+            <input type="text" name="apellido"><br><br>
+			<label>Formato:</label>
+			<input type="radio" name="formato" value="Apellido, Nombre">Apellido, Nombre
+			<input type="radio" name="formato" value="Nombre Apellido">Nombre Apellido<br><br>
+			<label>Provincia:</label>
+			<select name="provincia">
+				<option selected disabled></option>
+				<option value="Badajoz">Badajoz</option>
+				<option value="Cáceres">Cáceres</option>
+			</select><br><br>
+			<input type="reset" value="Borrar">
+			<input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>

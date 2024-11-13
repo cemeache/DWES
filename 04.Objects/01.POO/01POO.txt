@@ -1,7 +1,0 @@
-Realiza un programa que permita introducir 2 números en un formulario y 
-la operación que quieres realizar (+, -, *, /) y que muestre el resultado.
-
-Crea una clase con los métodos necesarios para realizar cada operación. 
-El resultado se muestra desde la página principal. 
-La operación se va a realizar usando el número mayor y el menor de los 
-que se han introducido, en lugar del número 1 y el número 2.
