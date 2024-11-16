@@ -4,6 +4,6 @@ CREATE TABLE usuario (
     apellidos VARCHAR(80) NOT NULL,
     email VARCHAR(50) NOT NULL,
     nombreUsu VARCHAR(30) NOT NULL,
-    contraseña VARCHAR(30) NOT NULL,
+    contrasena VARCHAR(30) NOT NULL,
     PRIMARY KEY (idUsuario)
 );
