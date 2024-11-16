@@ -2,7 +2,7 @@
     require_once("../conexion.php");
 
     $idntf = $_POST["identf"];
-    $pswd = $_POST["password"];
+    $pswd = password_hash($_POST["password"], PASSWORD_BCRYPT);
 
     $consulta = "SELECT idUsuario FROM usuario WHERE nombreUsu = '".$idntf."' OR email = '".$idntf."';";
     try {
@@ -21,7 +21,7 @@
 
             $fila = $resultado->fetch_assoc();
 
-            if($pswd === $fila["contrasena"]){
+            if(password_verify($pswd,$fila['contrasena'])){
                 $mnsj = "Inicio Sesión correctamente";
                 require("./form.php");
             }

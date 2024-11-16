@@ -10,12 +10,12 @@
     $passwordV2 = $_POST["passwordV2"];
 
     try {
-        if ($password != $passwordV2) {
-            throw new Exception("ERROR | Las contraseñas no coinciden");
-            
-        }
         // Verificar que las contraseñas coincidan
-        $consulta = "INSERT INTO usuario (nombre, apellidos, nombreUsu, email, contrasena) VALUES ('".$nombre."', '".$apellidos."', '".$nombreUsu."', '".$email."', '".$password."')";
+        if ($password != $passwordV2)
+            throw new Exception("ERROR | Las contraseñas no coinciden");
+
+        $password_hash = password_hash($password, PASSWORD_BCRYPT);
+        $consulta = "INSERT INTO usuario (nombre, apellidos, nombreUsu, email, contrasena) VALUES ('".$nombre."', '".$apellidos."', '".$nombreUsu."', '".$email."', '".$password_hash."')";
     
         try {
             // Ejecutar la consulta
