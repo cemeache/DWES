@@ -11,29 +11,24 @@
 
     try {
         // Verificar que las contraseñas coincidan
-        if ($password != $passwordV2) {
+        if ($password != $passwordV2) 
             throw new Exception("ERROR | Las contraseñas no coinciden");
-        }
 
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
         echo "Password hash: " . $password_hash . "<br>"; // Depuración de hash
 
         $consulta = "INSERT INTO usuario (nombre, apellidos, nombreUsu, email, contrasena) VALUES ('".$nombre."', '".$apellidos."', '".$nombreUsu."', '".$email."', '".$password_hash."')";
     
-        try {
-            // Ejecutar la consulta
-            if ($mysqli->query($consulta)) {
-                $mnsj = "Registro realizado correctamente.";
-            } else {
-                if ($mysqli->errno == 1062) {
-                    $mnsj = "ERROR | El nombre de usuario o el correo electrónico ya están registrados.";
-                } else {
-                    $mnsj = "ERROR | Ha ocurrido un error, no se pudo completar el registro";
-                }
-            }
-        } catch (Exception $e) {
-            $mnsj = $e->getMessage();
-        }   
+        
+        // Ejecutar la consulta
+        if ($mysqli->query($consulta))
+            $mnsj = "Registro realizado correctamente.";
+        else 
+            if ($mysqli->errno == 1062)
+                $mnsj = "ERROR | El nombre de usuario o el correo electrónico ya están registrados.";
+            else
+                $mnsj = "ERROR | Ha ocurrido un error, no se pudo completar el registro";
+        
         
         // Incluir el formulario para mostrar el mensaje
         require_once("./form.php"); 

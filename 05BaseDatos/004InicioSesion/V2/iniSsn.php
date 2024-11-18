@@ -21,9 +21,9 @@
         if (password_verify($pswd, $hash_contrasena)) {
             $mnsj = "Inicio Sesión correctamente";
             require("./form.php");
-        } else {
+        }else 
             throw new Exception("Contraseña Incorrecta");
-        }
+            
     } catch (Exception $e) {
         $mnsj = $e->getMessage();
         require("./form.php");
