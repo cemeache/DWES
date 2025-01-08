@@ -24,3 +24,27 @@ INNER JOIN officer ON officer.cust_id = business.cust_id
 RIGHT JOIN customer ON business.cust_id = customer.cust_id
 LEFT JOIN individual ON individual.cust_id = customer.cust_id;
 
+/*-- Relacion reflexiva [Empleados -> Jefes]--*/
+
+	-- 1. Num Total Empleados
+	SELECT COUNT(employee.emp_id) AS numTrabajadores FROM employee;
+
+	-- 2. Num Total Empleados Con Superior
+	SELECT COUNT(employee.emp_id) AS numTrabajadoresJefesAsig FROM employee WHERE employee.superior_emp_id IS NOT NULL;
+
+	-- 3. IDs Jefes 
+	SELECT DISTINCT employee.superior_emp_id AS idJefes FROM employee WHERE employee.superior_emp_id IS NOT NULL ;
+
+	-- 4. Nombre Jefes
+	SELECT DISTINCT employee.superior_emp_id AS idJefe, jefe.fname AS nombreJefe FROM employee 
+	INNER JOIN employee AS jefe ON employee.superior_emp_id = jefe.emp_id;
+
+	-- 5. Empleados Junto Jefe [Hay un trabajador que no tiene jefe, Jefe = NULL; por lo que no aparece en el resultado]
+	SELECT employee.emp_id AS idTrabajador, employee.fname AS nombreTrabajador, employee.superior_emp_id AS idJefe, 
+		jefe.fname AS nombreJefe FROM employee 
+	INNER JOIN employee AS jefe ON employee.superior_emp_id = jefe.emp_id;
+
+	-- 6. Todos Empleados Junto Jefe [Si lo tienen asignado]
+	SELECT employee.emp_id AS idTrabajador, employee.fname AS nombreTrabajador, employee.superior_emp_id AS idJefe, 
+		jefe.fname AS nombreJefe FROM employee 
+	LEFT JOIN employee AS jefe ON employee.superior_emp_id = jefe.emp_id;
