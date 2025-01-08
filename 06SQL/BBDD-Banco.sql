@@ -1,6 +1,6 @@
-CREATE DATBASE banco;
+CREATE DATABASE bank;
 
-USE banco;
+USE bank;
 
 
 /* begin table creation */

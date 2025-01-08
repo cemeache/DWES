@@ -11,8 +11,16 @@ LEFT JOIN business ON business.cust_id = customer.cust_id
 LEFT JOIN officer ON officer.cust_id = customer.cust_id
 LEFT JOIN individual ON individual.cust_id = customer.cust_id;
 
-/*--  --*/
+/*-- Empresa + Repre + Address --*/
 SELECT `name` AS empresa, officer.fname AS nombreRepre, 
-	address AS direccion FROM business, individual.fname AS nombreIndv
+	address AS direccion FROM business
 INNER JOIN officer ON officer.cust_id = business.cust_id
 LEFT JOIN customer ON business.cust_id = customer.cust_id;
+
+/*-- Empresa + Repre + Address + Indv --*/
+SELECT `name` AS empresa, officer.fname AS nombreRepre, 
+	address AS direccion, individual.fname AS nombreIndv FROM business
+INNER JOIN officer ON officer.cust_id = business.cust_id
+RIGHT JOIN customer ON business.cust_id = customer.cust_id
+LEFT JOIN individual ON individual.cust_id = customer.cust_id;
+
