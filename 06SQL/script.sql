@@ -93,3 +93,15 @@ FROM employee
 INNER JOIN department ON department.dept_id = employee.dept_id
 GROUP BY department.dept_id, YEAR(employee.start_date)
 ORDER BY department.`name`, YEAR(employee.start_date) ASC
+
+/*-- name depart con numEmpleados [depart +2 empled] --*/
+SELECT department.`name`, COUNT(*) AS numTrbj FROM employee
+INNER JOIN department ON department.dept_id = employee.dept_id
+GROUP BY department.dept_id
+HAVING COUNT(*) > 2
+
+/*--  Igual que antes pero usando el alias del count --*/
+SELECT department.`name`, COUNT(*) AS numTrbj FROM employee
+INNER JOIN department ON department.dept_id = employee.dept_id
+GROUP BY department.dept_id
+HAVING numTrbj > 2
