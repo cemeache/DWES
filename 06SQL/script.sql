@@ -48,3 +48,48 @@ LEFT JOIN individual ON individual.cust_id = customer.cust_id;
 	SELECT employee.emp_id AS idTrabajador, employee.fname AS nombreTrabajador, employee.superior_emp_id AS idJefe, 
 		jefe.fname AS nombreJefe FROM employee 
 	LEFT JOIN employee AS jefe ON employee.superior_emp_id = jefe.emp_id;
+
+
+/*-- Num Clientes Empresas --*/
+SELECT COUNT(*) FROM business;
+
+/*-- Suma Avail_balance Total Banco --*/
+SELECT SUM(`account`.avail_balance) FROM `account`;
+
+/*-- Media de avail_balance --*/
+SELECT AVG(`account`.avail_balance) FROM `account`;
+
+/*-- Cliente - Cuenta/s --*/
+SELECT customer.cust_id AS idClient, `account`.account_id AS idCuent, `account`.avail_balance FROM customer
+INNER JOIN `account` ON customer.cust_id = `account`.cust_id
+
+/*-- Balance Max --*/
+SELECT MAX(`account`.avail_balance) FROM `account`;
+
+/*-- Balance Max + id [Subconsulta]--*/
+SELECT `account`.cust_id, `account`.avail_balance FROM `account`
+WHERE `account`.avail_balance = (SELECT MAX(`account`.avail_balance) FROM `account`)
+
+/*-- Cuantos empleados hay en cada departamento, nombre departamento + numEmpleados --*/
+SELECT department.`name`, COUNT(*) AS numTrbj FROM employee
+INNER JOIN department ON department.dept_id = employee.dept_id
+GROUP BY department.dept_id
+
+/*-- Count Contratados 2002 --*/
+SELECT department.`name`, COUNT(*) AS numTrbj FROM employee
+INNER JOIN department ON department.dept_id = employee.dept_id
+WHERE YEAR(employee.start_date) = 2002
+GROUP BY department.dept_id
+
+SELECT department.`name`, COUNT(*) AS numTrbj FROM employee
+INNER JOIN department ON department.dept_id = employee.dept_id
+WHERE YEAR(employee.start_date) = 2002
+GROUP BY department.dept_id
+ORDER BY department.`name` ASC
+
+/*-- Agrupar por años  --*/
+SELECT department.`name`, YEAR(employee.start_date) AS año, COUNT(*) AS numTrbj 
+FROM employee
+INNER JOIN department ON department.dept_id = employee.dept_id
+GROUP BY department.dept_id, YEAR(employee.start_date)
+ORDER BY department.`name`, YEAR(employee.start_date) ASC
