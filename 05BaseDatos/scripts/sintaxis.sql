@@ -150,6 +150,10 @@ SELECT COUNT(column_name)
 FROM table_name
 WHERE condition;
 
+/*COUNT(DISTINCT) --> Cuenta las filas con valores no repetidos*/
+SELECT COUNT(DISTINCT column_name)
+FROM table_name;
+
 /*SUM --> Devuelve la suma de una columna*/
 SELECT SUM(column_name)
 FROM table_name

@@ -104,4 +104,12 @@ HAVING COUNT(*) > 2
 SELECT department.`name`, COUNT(*) AS numTrbj FROM employee
 INNER JOIN department ON department.dept_id = employee.dept_id
 GROUP BY department.dept_id
-HAVING numTrbj > 2
+HAVING numTrbj > 2;
+
+/*-- Count -> Valores nulls [No cuneta los valores null] --*/
+/*-- Num Total de asignaciones de jefes --*/
+SELECT COUNT(employee.superior_emp_id) AS asigJefes FROM employee;
+
+/*-- Count(distint) -> Solo cuenta los valores diferentes --*/
+/*-- Num Total de jefes --*/
+SELECT COUNT(DISTINCT employee.superior_emp_id) AS numJefes FROM employee;
