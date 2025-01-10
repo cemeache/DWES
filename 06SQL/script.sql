@@ -113,3 +113,5 @@ SELECT COUNT(employee.superior_emp_id) AS asigJefes FROM employee;
 /*-- Count(distint) -> Solo cuenta los valores diferentes --*/
 /*-- Num Total de jefes --*/
 SELECT COUNT(DISTINCT employee.superior_emp_id) AS numJefes FROM employee;
+
+/*-- Litado de clientes que han nacido antes del 1970 --*/
