@@ -236,6 +236,11 @@ SELECT column1, column2, ...
 FROM tabla1 [INNER JOIN ...]
 WHERE EXISTS (SELECT FROM table2 [WHERE condition]);
 
+/*WHERE NOT EXITS*/
+SELECT column1, column2, ...
+FROM tabla1 [INNER JOIN ...]
+WHERE EXISTS (SELECT FROM table2 [WHERE condition]);
+
 /*En las subconsultas puedo utilizar campos de la tabla de la consulta principal*/
 /*En la consulta principal no puedo usar campos de la tabla de la subconsulta*/
 /*INNER JOIN > Subconsulta*/
