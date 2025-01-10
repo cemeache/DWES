@@ -62,6 +62,10 @@ DROP CONSTRAINT nombre_restriccion;
 DELETE FROM table_name
 WHERE condition;
 
+/*TRUNCATE --> Borrar filas de una tabla*/
+TRUNCATE table_name;
+
+
 ------------------------SELECTS------------------------
 
 /*SELECT | TODOS LOS DATOS DE UNA TABLA*/
@@ -189,3 +193,26 @@ FROM table_name;
 /*FORMAT --> Formatea una fecha*/
 SELECT FORMAT(fecha,'dd/mm')
 FROM table_name;
+
+/*SELECT INTO --> Hace el select y crea una tabla nueva con los campos del select y guarda los resultados*/
+SELECT *
+INTO newtable [IN externaldb]
+FROM oldtable
+WHERE condition;
+
+SELECT column1, column2, column3, ...
+INTO newtable [IN externaldb]
+FROM oldtable
+WHERE condition;
+
+/*INSERT INTO SELECT --> Insertamos en x tabla datos devueltos del select*/
+INSERT INTO table2
+SELECT * FROM table1
+WHERE condition;
+
+INSERT INTO table2 (column1, column2, column3, ...)
+SELECT column1, column2, column3, ...
+FROM table1
+WHERE condition;
+
+/**/
