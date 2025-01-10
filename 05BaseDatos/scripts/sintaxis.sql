@@ -231,6 +231,12 @@ SELECT column1, column2, ...
 FROM tabla1 [INNER JOIN ...]
 WHERE condition NOT IN (SELECT FROM table2 [WHERE condition]);
 
+/*condition ANY ('1DAW', '2DAW', '2SMR') | PUEDE devolver VARIAS filas que no sean ni 1daw, 2daw, 2smr*/
+/*ANY = IN | Diferencia que el any de puede usar con > y < y !=*/
+SELECT column1, column2, ...
+FROM tabla1 [INNER JOIN ...]
+WHERE condition = ANY (SELECT FROM table2 [WHERE condition]);
+
 /*WHERE EXISTS | Coge la fila de la tabla1 y compara con los resultados de la subconsulta [WHERE EXISTS -> Boolean]*/
 SELECT column1, column2, ...
 FROM tabla1 [INNER JOIN ...]
