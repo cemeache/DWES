@@ -201,7 +201,7 @@ FROM oldtable
 WHERE condition;
 
 SELECT column1, column2, column3, ...
-INTO newtable [IN externaldb]
+INTO newtable [IN externalBBDD]
 FROM oldtable
 WHERE condition;
 
@@ -216,10 +216,18 @@ FROM table1
 WHERE condition;
 
 /*SELECT FROM WHERE (SELECT FROM) --> Mostramos datos que cumplan la condicion la cualestá igualada al resultado de otro select*/
+/*condition = ('1DAW') | Solo puede devolver UNA fila*/
 SELECT column1, column2, ...
 FROM tabla1 [INNER JOIN ...]
 WHERE condition = (SELECT FROM table2 [WHERE condition]);
+
+/*condition IN ('1DAW', '2DAW', '2SMR') | PUEDE devolver VARIAS filas*/
+SELECT column1, column2, ...
+FROM tabla1 [INNER JOIN ...]
+WHERE condition IN (SELECT FROM table2 [WHERE condition]);
+
 /*En las subconsultas puedo utilizar campos de la tabla de la consulta principal*/
+/*En la consulta principal no puedo usar campos de la tabla de la subconsulta*/
 /*INNER JOIN > Subconsulta*/
 
 /*Operadores Relacionales*/
