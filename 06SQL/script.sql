@@ -115,3 +115,6 @@ SELECT COUNT(employee.superior_emp_id) AS asigJefes FROM employee;
 SELECT COUNT(DISTINCT employee.superior_emp_id) AS numJefes FROM employee;
 
 /*-- Litado de clientes que han nacido antes del 1970 --*/
+SELECT * FROM individual
+WHERE YEAR(individual.birth_date) < 1970
+ORDER BY birth_date ASC
