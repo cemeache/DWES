@@ -219,6 +219,8 @@ WHERE condition;
 SELECT column1, column2, ...
 FROM tabla1 [INNER JOIN ...]
 WHERE condition = (SELECT FROM table2 [WHERE condition]);
+/*En las subconsultas puedo utilizar campos de la tabla de la consulta principal*/
+/*INNER JOIN > Subconsulta*/
 
 /*Operadores Relacionales*/
-/*= | > | < | <= | >= | != | IN | BETWEEN x AND x | */
+/*= | > | < | <= | >= | != | IN | BETWEEN x AND x */
