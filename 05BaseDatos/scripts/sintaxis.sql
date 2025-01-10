@@ -226,6 +226,16 @@ SELECT column1, column2, ...
 FROM tabla1 [INNER JOIN ...]
 WHERE condition IN (SELECT FROM table2 [WHERE condition]);
 
+/*condition NOT IN ('1DAW', '2DAW', '2SMR') | PUEDE devolver VARIAS filas que no sean ni 1daw, 2daw, 2smr*/
+SELECT column1, column2, ...
+FROM tabla1 [INNER JOIN ...]
+WHERE condition NOT IN (SELECT FROM table2 [WHERE condition]);
+
+/*WHERE EXISTS | Coge la fila de la tabla1 y compara con los resultados de la subconsulta [WHERE EXISTS -> Boolean]*/
+SELECT column1, column2, ...
+FROM tabla1 [INNER JOIN ...]
+WHERE EXISTS (SELECT FROM table2 [WHERE condition]);
+
 /*En las subconsultas puedo utilizar campos de la tabla de la consulta principal*/
 /*En la consulta principal no puedo usar campos de la tabla de la subconsulta*/
 /*INNER JOIN > Subconsulta*/

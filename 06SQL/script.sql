@@ -68,7 +68,7 @@ SELECT MAX(`account`.avail_balance) FROM `account`;
 
 /*-- Balance Max + id [Subconsulta]--*/
 SELECT `account`.cust_id, `account`.avail_balance FROM `account`
-WHERE `account`.avail_balance = (SELECT MAX(`account`.avail_balance) FROM `account`)
+WHERE `account`.avail_balance = (SELECT MAX(`account`.avail_balance) FROM `account`);
 
 /*-- Cuantos empleados hay en cada departamento, nombre departamento + numEmpleados --*/
 SELECT department.`name`, COUNT(*) AS numTrbj FROM employee
