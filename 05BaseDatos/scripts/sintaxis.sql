@@ -215,4 +215,10 @@ SELECT column1, column2, column3, ...
 FROM table1
 WHERE condition;
 
-/**/
+/*SELECT FROM WHERE (SELECT FROM) --> Mostramos datos que cumplan la condicion la cualestá igualada al resultado de otro select*/
+SELECT column1, column2, ...
+FROM tabla1 [INNER JOIN ...]
+WHERE condition = (SELECT FROM table2 [WHERE condition]);
+
+/*Operadores Relacionales*/
+/*= | > | < | <= | >= | != | IN | BETWEEN x AND x | */
